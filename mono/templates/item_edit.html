@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <h2>アイテムを編集</h2>
+    <form action="" method="post">
+        <div class="form-group">
+        　<label for="item_name">アイテム名</label>
+          <input type=text class="form-control" name=name id="itemName" aria-describedby="nameHelp" value="{{ item.name if item.name }}">
+          <small id="nameHelp" class="form-text text-muted">管理するアイテム名を入れてください</small>
+          <label for="item_description">説明</label>
+          <textarea class="form-control" name=description id="item_description" rows="3">{{ item.description if item.description }}</textarea>
+          <small id="descriptionHelp" class="form-text text-muted">アイテムを選んだ理由やお気に入りの点などの説明を入れてください</small>
+        　<label for="item_status">状態</label>
+          <select class="form-control" id="itemStatus" name=status>
+              <option value="possession" {{ 'selected' if item.status == "possession" }}>所持</option>
+              <option value="considering" {{ 'selected' if item.status == "considering" }}>考え中</option>
+              <option value="disposed" {{ 'selected' if item.status == "disposed" }}>断捨離済み</option>
+          </select>
+        　<label for="item_category">カテゴリー</label>
+          <input type=text class="form-control" name=category id="itemCategory" aria-describedby="categoryHelp" value="{{ item.category }}">
+          <small id="categoryHelp" class="form-text text-muted">カテゴリを選択・追加してください</small>
+          <label for="item_url">URL</label>
+          <input type=text class="form-control" name=url id="itemUrl" aria-describedby="urlHelp" value="{{ item.url }}">
+          <small id="urlHelp" class="form-text text-muted">アイテムを紹介する記事やページのURLを入れてください</small>
+          <button type=submit class="btn btn-primary mb-2">アイテムを更新</button>
+        </div>
+    </form>
+{% endblock %}

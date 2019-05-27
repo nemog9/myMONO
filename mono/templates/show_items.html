@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h2>Items</h2>
+
+    <div class="card">
+        <ul class="list-group list-group-flush">
+        {% for item in items %}
+        <li class="list-group-item"><a href="{{ url_for('item_detail', item_id=item.id) }}">{{ item.name }}</a></li>
+        {% else %}
+        <li><em>Unbelibable. No items here so far</em></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

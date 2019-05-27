@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h2 class="text-center">ユーザーネーム</h2>
+    <div class="card">
+      <div class="card-body text-center">
+        <strong>{{ user.name }}</strong>
+      </div>
+    </div>
+    <p></p>
+    {% if user.id == session['user_id'] %}
+    <div>
+        <h2 class="text-center">メニュー</h2>
+        <ul class="list-group">
+            <li class="list-group-item text-center"><a href="{{ url_for('new_item', user_id=user.id) }}">アイテムを追加</a></li>
+            <li class="list-group-item text-center"><a href="{{ url_for('user_edit', user_id=user.id) }}">ユーザーを編集</a></li>
+            {# <li><a class="user-delete-link" href="#" data-delete-url="{{ url_for('user_delete', user_id=user.id) }}">delete</a></li> #}
+        </ul>
+    </div>
+    {% endif %}
+    <p></p>
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-possession-list" data-toggle="list" href="#list-possession" role="tab" aria-controls="possession">所持</a>
+          <a class="list-group-item list-group-item-action" id="list-considering-list" data-toggle="list" href="#list-considering" role="tab" aria-controls="considering">考え中</a>
+          <a class="list-group-item list-group-item-action" id="list-disposed-list" data-toggle="list" href="#list-disposed" role="tab" aria-controls="disposed">断捨離済み</a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-possession" role="tabpanel" aria-labelledby="list-possession-list">
+            <ul class="list-group">
+            {% for possession_item in possession_items %}
+                <li class="list-group-item"><a href="{{ url_for('item_detail', item_id=possession_item.id) }}">{{ possession_item.name }}</a></li>
+            {% endfor %}
+            </ul>
+          </div>
+          <div class="tab-pane fade" id="list-considering" role="tabpanel" aria-labelledby="list-considering-list">
+            <ul class="list-group">
+              {% for considering_item in considering_items %}
+                <li class="list-group-item"><a href="{{ url_for('item_detail', item_id=considering_item.id) }}">{{ considering_item.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="tab-pane fade" id="list-disposed" role="tabpanel" aria-labelledby="list-disposed-list">
+            <ul class="list-group">
+            {% for disposed_item in disposed_items %}
+                <li class="list-group-item"><a href="{{ url_for('item_detail', item_id=disposed_item.id) }}">{{ disposed_item.name }}</a></li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

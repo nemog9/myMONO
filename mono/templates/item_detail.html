@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <dl class="row">
+        <dt class="col-sm-3">アイテム名</dt>
+        <dd class="col-sm-9">{{ item.name }}</dd>
+        <dt class="col-sm-3">説明</dt>
+        <dd class="col-sm-9">{{ item.description }}</dd>
+        <dt class="col-sm-3">状態</dt>
+        <dd class="col-sm-9">
+        {# {% if item.status == "possession" %}
+          所持
+          {% elif item.status == "considering" %}
+          考え中
+          {% else item.status == "disposed" %}
+          断捨離済み
+          {% endif %} #}
+        {{ item.status }}
+        </dd>
+        <dt class="col-sm-3">カテゴリー</dt>
+        <dd class="col-sm-9">{{ item.category }}</dd>
+        <dt class="col-sm-3">URL</dt>
+        <dd class="col-sm-9"><a href="{{ item.url }}">{{ item.url }}</a></dd>
+        <dt class="col-sm-3">更新時刻</dt>
+        <dd class="col-sm-9">{{ item.updated_on }}</dd>
+        <dt class="col-sm-3">持っている人</dt>
+        <dd class="col-sm-9"><a href="{{ url_for('user_detail', user_id=item.users.id) }}">{{ item.users.name }}</a></dd>
+    </dl>
+    <a  class="btn btn-success" href="{{ url_for('item_edit', item_id=item.id) }}" role="button">編集</a>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h2>Users</h2>
+
+    <div class="card">
+        <ul class="list-group list-group-flush">
+        {% for user in users %}
+        <li class="list-group-item"><a href="{{ url_for('user_detail', user_id=user.id) }}">{{ user.name }}</a></li>
+        {% else %}
+        <li><em>Unbelibable. No users here so far</em></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <h2>{{ 'ユーザー編集' if user else 'ユーザー登録' }}</h2>
+
+    <form action="" method="post">
+        <div class="form-group">
+        <label for="userName">ユーザーネーム</label>
+        <input type=text class="form-control" name=name id="userName" value="{{ user.name if user }}">
+        <p></p>
+        <label for="userPassword">パスワード</label>
+        <input type=password class="form-control" name=password id="userPassword" value="">
+        <p></p>
+        <button type=submit class="btn btn-primary mb-2">{{ '更新' if user else '登録' }}</button>
+    </div>
+    </form>
+{% endblock %}
