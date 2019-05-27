@@ -1,1 +1,1 @@
-web: gunicorn mono.wsgi --log-file-
+web: gunicorn mono:app
