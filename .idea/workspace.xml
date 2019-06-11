@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/mono/templates/user_detail.html" line="24" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce812da6-7878-42e8-adae-a0138341066d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mono/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/mono/config.py" afterDir="false" />
-    </list>
+    <list default="true" id="ce812da6-7878-42e8-adae-a0138341066d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,12 +272,12 @@
       <workItem from="1558576348454" duration="126000" />
       <workItem from="1558576515254" duration="49823000" />
       <workItem from="1558852388934" duration="24312000" />
-      <workItem from="1559052101119" duration="307000" />
+      <workItem from="1559052101119" duration="704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75291000" />
+    <option name="totallyTimeSpent" value="75688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -293,7 +290,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="372" y="23" width="1068" height="812" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16471735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
